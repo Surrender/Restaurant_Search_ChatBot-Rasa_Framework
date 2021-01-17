@@ -1,0 +1,507 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - howdy
+    - hey there
+    - hey bot
+    - hello there
+    - hi there
+    - hello
+    - hi
+    - good morning
+    - good afternoon
+    - good evening
+    - dear sir
+    - Hola
+    - Bonjour
+    - Ciao
+    - Salve
+    - morning
+    - evening
+    - afternoon
+    - hola
+    - hi friend
+    - hey, let's talk
+    - moin
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - hola!
+    - Hi
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - thanks, bye
+    - thanks
+    - good bye
+    - stop
+    - end
+    - farewell
+    - Bye bye
+    - have a good one
+    - I am going
+    - I am leaving bye
+    - it was nice talking to you
+    - Bye Bye
+    - catch you later
+    - bye for now
+    - see ya
+    - goodnight
+    - Thanks!!!
+    - Nice...
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - that sounds good
+    - yep
+    - yeah
+    - that's right
+    - ok
+    - great
+    - right, thank you
+    - correct
+    - great choice
+    - sounds really good
+    - thanks
+    - yes. Please
+    - yeah sure
+    - yes, do you know my email id
+    - cool ok
+    - yup
+    - of course
+    - sure
+    - cool
+    - yes please!
+    - fine
+    - confirm
+    - Please send!
+- intent: deny
+  examples: |
+    - no
+    - n
+    - nope
+    - definitely not
+    - never
+    - absolutely not
+    - i don't think so
+    - i'm afraid not
+    - no sir
+    - no ma'am
+    - no way
+    - no sorry
+    - No, not really.
+    - no and no again
+    - no go
+    - no thanks
+    - decline
+    - deny
+    - i decline
+    - never mind
+    - nevermind
+    - not really
+    - don't like that
+- intent: restaurant_search
+  examples: |
+    - I am looking for a restaurant
+    - i'm looking for a place to eat
+    - I want to grab lunch
+    - I am searching for a dinner spot
+    - search for restaurants
+    - show me restaurants
+    - find me restaurant
+    - find me a restaurant
+    - Im hungry. Looking out for some good restaurants
+    - i want to find out restaurant near me- Find a restaurant for me to eat
+    - Can you find me a good restaurant?
+    - I need to find a restaurant- A place to have food
+    - Feeling hungry, can you help
+    - I am hungry, find a restaurant
+    - Get me some food quickly
+    - Pick some place for me to eat quickly
+    - Where can i get some food to eat
+    - i'm looking for a restaurant
+    - pick a restaurant for me
+    - please find a restaurant for me
+    - I'm hungry. Looking out for some good restaurants
+    - I am feeling hungry
+    - Find me some new restaurants
+    - Suggest me a good restaurant
+    - where should i eat?
+    - I need your help finding a restaurant
+    - in [Gurgaon](location)
+    - [Ludhiana](location)
+    - in [delhi]{"entity": "location", "value": "Delhi"}
+    - anywhere in [Delhi](location)
+    - Oh, sorry, in [chandigarh]{"entity": "location", "value": "Chandigarh"}
+    - I am looking for some restaurants in [Delhi](location).
+    - I am looking for some restaurants in [Bengaluru](location)
+    - please help me to find restaurants in [pune]{"entity": "location", "value": "Pune"}
+    - [mumbai]{"entity": "location", "value": "Mumbai"}
+    - I am looking for some restaurants in [Mumbai](location)
+    - [delhi]{"entity": "location", "value": "Delhi"}
+    - please find me a restaurant in [ahmedabad]{"entity": "location", "value": "Ahmedabad"}
+    - [bengaluru]{"entity": "location", "value": "Bengaluru"}
+    - [Bangalore]{"entity": "location", "value": "Bengaluru"}
+    - [bangalore]{"entity": "location", "value": "Bengaluru"}
+    - [cyberabad]{"entity": "location", "value": "Hyderabad"}
+    - [Rishikesh](location)
+    - [rishikesh]{"entity": "location", "value": "Rishikesh"}
+    - Can you suggest some good restaurants in [vizag]{"entity": "location", "value": "Visakhapatnam"}
+    - find me a restaurant in [delhi]{"entity": "location", "value": "Delhi"}
+    - Can you suggest some good restaurants in [kolkata]{"entity": "location", "value": "Kolkata"}
+    - help me find restaurant in [Bombai]{"entity": "location", "value": "Mumbai"}
+    - Can you find me a restaurant in [Ahmedabad](location)
+    - Could you find me a restaurant to eat at [Madras]{"entity": "location", "value": "Chennai"}?
+    - please help me to find restaurants in [Poona]{"entity": "location", "value": "Pune"}
+    - please help me to find restaurant in [Pune](location)
+    - Please find me a restaurant in [Chennai](location)
+    - Where should I eat in [Visakhapatnam](location)?
+    - Hey help me find a restaurant in [hyderabad]{"entity": "location", "value": "Hyderabad"}
+    - Help me find a restaurant in [Surat](location)
+    - Recommend me a restaurant around [Pune](location)
+    - Would you find me a restaurant in [Prayagraj](location)??
+    - Okay. Show me some restaurants in [Indore](location)
+    - [Mexican](cuisine)
+    - [North Indian](cuisine)
+    - show me [chinese]{"entity": "cuisine", "value": "Chinese"} restaurants
+    - [South Indian](cuisine)
+    - [Italian](cuisine)
+    - [Chinese](cuisine)
+    - [chinese]{"entity": "cuisine", "value": "Chinese"}
+    - [American](cuisine)
+    - i am looking for an [south indian]{"entity": "cuisine", "value": "South Indian"} spot called olaolaolaolaolaola
+    - I am looking for [mexican]{"entity": "cuisine", "value": "Mexican"} indian fusion
+    - central [north indian]{"entity": "cuisine", "value": "North Indian"} restaurant
+    - can you find me a [Chinese](cuisine) restaurant
+    - show me [chines]{"entity": "cuisine", "value": "Chinese"} restaurants in the [New Delhi](location)
+    - show me a [mexican]{"entity": "cuisine", "value": "Mexican"} place in the [centre](location)
+    - please find me [Chinese](cuisine) restaurant in [delhi](location)
+    - please show me a few [italian]{"entity": "cuisine", "value": "Italian"} restaurants in [bangalore](location)
+    - I want to know [low](price) priced mexican cuisine restaurants
+    - show me [low](price) budget [Chinese](cuisine) restaurants in [Agra](location)
+    - show me [medium](price) budget [italian]{"entity": "cuisine", "value": "Italian"} restaurants in [Allahabad](location)
+    - show me [costly](price) [north indian]{"entity": "cuisine", "value": "North Indian"} restaurants in [Hyderabad](location)
+    - find [expensive](price) restaurants in [Varanasi](location)
+    - find [costly](price) restaurants in [Jaipur](location)
+    - find [medium](price) cost [south indian]{"entity": "cuisine", "value": "South Indian"} restaurants in [Cuttack](location)
+    - [high](price) price
+    - [medium](price)
+    - Okay. Show me some in [Allahabad]{"entity": "location", "value": "Prayagraj"}
+    - Ill prefer [chines]{"entity": "cuisine", "value": "Chinese"}
+    - [>700](price)
+    - [american]{"entity": "cuisine", "value": "American"}
+    - [<300]{"entity": "price", "value": "low"}
+    - [high](price)
+    - I am hungry. Looking out for some good restaurants
+    - [Hyderabad](location)
+    - Can you suggest some good restaurants in [Vizag]{"entity": "location", "value": "Visakhapatnam"}
+    - [North Indian](cuisine)
+    - [low](price)
+    - [chinese]{"entity": "cuisine", "value": "Chinese"}
+- intent: email_confirmation
+  examples: |
+    - email id : [bbc@gmail.com](email)
+    - my email id is [abcd@yahoo.com](email)
+    - email id is [red@gmail.com](email)
+    - yes. Please send it to [ahbcdj@dkj.com](email)
+    - [abcde.h75@yahoo.co.in](email)
+    - [abcde_h75@yahoo.co.in](email)
+    - [jddk.2jmd@kdl.co.in](email)
+    - [xyz@sth.edu](email)
+    - [abc.def@rediffmail.com](email)
+    - [xyz@upgrad.com](email)
+    - yes. its [catchmeover@gmail.com](email)
+    - yes. Please send it to [catchmeover@gmail.com](email)
+    - yes. Please send it to [xyz@sth.edu](email)
+    - yes send at [catchmeover@gmail.com](email)
+    - yes its [catchmeover@gmail.com](email)
+    - [catchmeover@gmail.com](email)
+    - [foodjoint657@gmail.com](email)
+    - yes send me at [catchmeover@gmail.com](email)
+    - can u mail me the information to [abc@abc.com](email)?
+    - can u mail to [test@tes.com](email)?
+    - can u mail me at [test-123.456@dom.123.co.in](email)?
+    - email address - [test.some@gmail.co.in](email). Mail this list.
+    - email me at [email-123@domina.com](email)
+    - mail me [emial@domain.io](email)
+    - please mail me the list to [123-email@domain.co.in](email)
+    - please send me the list to [123@domain.net](email)
+    - please send this to [email.123@123.456.com](email)
+    - send this to [abc-email@abc.com](email)
+    - send to [abc_123-email@abc123.com](email)
+    - this is my email address - [email-abc_123@abc.com.edu](email). send me an email.
+    - [email1_34-ret@host-name.123.com](email)
+    - email - [catchme@gmail.com](email)
+- synonym: Pune
+  examples: |
+    - Poona
+    - pune
+    - poona
+- synonym: Prayagraj
+  examples: |
+    - Allahabad
+    - prayagraj
+    - allahabad
+- synonym: Chinese
+  examples: |
+    - chines
+    - chinese
+    - taco
+    - Chines
+- synonym: American
+  examples: |
+    - american
+    - america
+- synonym: low
+  examples: |
+    - <300
+    - lower
+    - cheap
+    - cheaper
+    - inexpensive
+    - less than 300
+    - cost under 300
+    - Lesser than Rs. 300
+    - Lesser than Rs.300
+    - lesser than Rs. 300
+    - lesser than Rs.300
+    - Lesserthan Rs. 300
+    - lesserthan Rs. 300
+    - lesserthan Rs.300
+    - Lesserthan Rs.300
+    - Less than Rs. 300
+    - Less than Rs.300
+    - less than Rs. 300
+    - less than Rs.300
+    - Lessthan Rs. 300
+    - lessthan Rs. 300
+    - lessthan Rs.300
+    - Lessthan Rs.300
+    - Lesser than 300
+    - lesser than 300
+    - Lesserthan 300
+    - lesserthan 300
+    - Less than 300
+    - lessthan 300
+    - Lessthan 300
+- synonym: Italian
+  examples: |
+    - italic
+    - italia
+- synonym: North Indian
+  examples: |
+    - north indian
+    - north-indian
+    - northindian
+    - NorthIndian
+    - north food
+    - northie
+    - punjabi
+    - punjab
+    - gujarati
+    - gujarat
+    - bengali
+    - bengal
+    - kashmiri
+    - kashmir
+- synonym: South Indian
+  examples: |
+    - south indian
+    - south-indian
+    - SouthIndian
+    - southindian
+    - south food
+    - southie
+    - andhra
+    - telugu
+    - kerala
+    - karnataka
+    - tamil
+- synonym: Delhi
+  examples: |
+    - New Delhi
+    - newdelhi
+    - deali
+    - Dilli
+    - delhi
+    - NewDelhi
+    - newDelhi
+    - Newdelhi
+    - new delhi
+    - new Delhi
+    - Dellhi
+    - Old Delhi
+    - old delhi
+    - Delhi NCR
+    - delhi NCR
+    - naya delhi
+- synonym: Bengaluru
+  examples: |
+    - bengaluru
+    - Bangalore
+    - bangalore
+    - blore
+    - blr
+    - Blr
+    - Blore
+- synonym: Kolkata
+  examples: |
+    - Calcutta
+    - calcutta
+    - kolkata
+- synonym: Mumbai
+  examples: |
+    - bombay
+    - mumbai
+    - Bombai
+    - Bombay
+    - bombai
+    - Navi mumbai
+- synonym: Hyderabad
+  examples: |
+    - secunderabad
+    - hydrabad
+    - Cyberabad
+    - cyberabad
+    - Secunderabad
+    - hyd
+- synonym: Ahmedabad
+  examples: |
+    - Amdavad
+    - Ahmadabad
+    - amdavad
+- synonym: Chennai
+  examples: |
+    - Madras
+    - chennai
+    - madras
+- synonym: Gurgaon
+  examples: |
+    - Gurugram
+    - gurugram
+    - gurgaon
+    - Gurgao
+- synonym: Kochi
+  examples: |
+    - kochi
+    - cochin
+    - Cochin
+- synonym: Mysore
+  examples: |
+    - mysore
+    - Mysuru
+    - mysuru
+- synonym: Mangalore
+  examples: |
+    - mangalore
+    - mangaluru
+    - Mangaluru
+- synonym: Rishikesh
+  examples: |
+    - rishikesh
+- synonym: Visakhapatnam
+  examples: |
+    - visakhapatnam
+    - Vizag
+    - vizag
+- synonym: Thiruvananthapuram
+  examples: |
+    - thiruvananthapuram
+    - trivandrum
+    - Trivandrum
+    - Travancore
+    - travancore
+- synonym: Vadodara
+  examples: |
+    - vadodara
+    - Vadodra
+    - vadodra
+    - Baroda
+    - baroda
+- synonym: Jamshedpur
+  examples: |
+    - jamshedpur
+    - Jamsedpur
+    - jamsedpur
+- synonym: Rajahmundry
+  examples: |
+    - rajahmundry
+    - Rajahmundri
+    - rajahmundri
+    - Rajamundry
+    - rajamundry
+- synonym: Rourkela
+  examples: |
+    - rourkela
+    - Raurkela
+    - raurkela
+- synonym: Amritsar
+  examples: |
+    - amritsar
+    - Amratsar
+    - amratsar
+- synonym: Chandigarh
+  examples: |
+    - chandigarh
+    - Chandighar
+    - chandighar
+- synonym: Nashik
+  examples: |
+    - nashik
+    - Nasik
+    - nasik
+- synonym: Pondicherry
+  examples: |
+    - pondicherry
+    - puducherry
+    - Puducherry
+- synonym: medium
+  examples: |
+    - moderately
+    - moderate
+    - mid
+    - average
+    - in range of 300 to 700
+    - 300 to 700
+    - 300-700
+    - Rs. 300 to 700
+    - Rs.300 to 700
+- synonym: high
+  examples: |
+    - expensive
+    - costly
+    - More than 700
+    - >700
+    - greater than 700
+    - 700 or more
+    - luxury
+    - luxurious
+    - More than Rs.700
+    - More than Rs. 700
+    - more than 700
+    - more than Rs.700
+    - more than Rs. 700
+    - Morethan 700
+    - Morethan Rs.700
+    - Morethan Rs. 700
+    - morethan 700
+    - morethan Rs.700
+    - morethan Rs. 700
+- regex: greet
+  examples: |
+    - hey[^\s]*
